@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+ {% for i in data %}
+
+<div style="border:2px solid black; padding:20px; margin:20px;">
+
+    <h1>
+        {{ i.flag }}
+        {{ i.name.common }}
+    </h1>
+    <img src="{{ i.flags.png }}" width="200px">
+    <p>
+        <b>Capital:</b>
+        {{ i.capital.0 }}
+    </p>
+    <p>
+        <b>Independent:</b>
+        {% if i.independent %}
+            ✅
+        {% else %}
+            ❌
+        {% endif %}
+    </p>
+    <p>
+        <b>Calling Code:</b>
+        {{ i.idd.root }}
+        {% for s in i.idd.suffixes %}
+            {{ s }}
+        {% endfor %}
+    </p>
+    <p>
+        <b>Region:</b>
+        {{ i.region }}
+    </p>
+    <p>
+        <b>Subregion:</b>
+        {{ i.subregion }}
+    </p>
+    <p>
+        <b>Borders:</b>
+    {% for b in i.borders %}
+        {{ b }},
+    {% endfor %}
+    </p>
+    <p>
+        <b>Area:</b>
+        {{ i.area }}
+    </p>
+    <p>
+        <b>Population:</b>
+        {{ i.population }}
+    </p>
+    <p>
+        <b>Timezone:</b>
+        {{ i.timezones.0 }}
+    </p>
+    <p>
+        <b>Google Map:</b>
+        <a href="{{ i.maps.googleMaps }}" target="_blank">
+            Open Map
+        </a>
+    </p>
+    <p>
+        <b>Population:</b>
+        {{i.population}}
+    </p>
+    <p>
+        <b>timezones:</b>
+        {{i.timezones}}
+    </p>
+    <p>
+        <b>continents:</b>
+        {{i.continents}}
+    </p>
+    <p>
+        <b>latlng:</b>
+        {{i.latlng}}
+    </p>
+    {% for key, value in i.currencies.items %}
+    <p>
+        <b>Code:</b> {{ key }}
+    </p>
+
+    <p>
+        <b>Symbol:</b> {{ value.symbol }}
+    </p>
+
+    <p>
+        <b>Name:</b> {{ value.name }}
+    </p>
+    {% endfor %}
+    <p>
+        <b>coatOfArms:</b>
+        <img src="{{ i.coatOfArms.png }}" alt="" width="200px">
+    </p>
+    <p>
+        <b>startOfWeek:</b>
+        {{i.startOfWeek}}
+    </p>
+    <p>
+        <b>Car:
+             {{ i.car.side }},
+            {% for s in i.car.signs %}
+                {{ s }}
+            {% endfor %}
+        </b>
+</p>
+</div>
+{% endfor %}
+</body>
+</html>

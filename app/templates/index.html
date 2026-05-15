@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        h1{
+            text-align: center;
+            /* margin-top: 50px; */
+        }
+        form{
+            height: 50px;
+            width: 900px;
+            margin: 200px 700px;
+            input{
+                height: 40px;
+                width: 300px;
+                border: none;
+                border-radius: 10px;
+            }
+            button{
+                background-color: blue;
+                color: white;
+                height: 20px;
+                width: 80px;
+                border: none;
+                border-radius: 10px;
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <!-- <h1>Country</h1> -->
+    <form action="" method="post">
+        {% csrf_token %}
+        <input type="text" name="a" id="" placeholder="Enter a country name"> <br> <br>
+        <button type="submit">Submit</button>
+    </form>
+    <!-- <table border="2px solid black">
+        <tr>
+            <th>Country</th>
+            <th>Capital</th>
+            <th>Flag</th>
+        </tr>
+        {% for i in data %}
+        <tr>
+            <td>{{i.name.common}}</td>
+            <td>{{i.capital.0}}</td>
+            <td><img src="{{i.flags.png}}" alt="" height="100px" width="100px"></td>
+        
+        </tr>
+        {% endfor %}
+    </table> -->
+</body>
+</html>
